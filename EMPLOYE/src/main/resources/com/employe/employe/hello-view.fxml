@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="685.0" prefWidth="1511.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.employe.employe.HelloController">
+   <children>
+      <AnchorPane layoutY="-3.0" prefHeight="479.0" prefWidth="304.0">
+         <children>
+            <Label layoutX="104.0" layoutY="40.0" text="Employe Management">
+               <font>
+                  <Font name="Tahoma Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="79.0" fitWidth="80.0" layoutX="14.0" layoutY="10.0">
+               <image>
+                  <Image url="@./png-transparent-computer-icons-employee-self-service-business-advertising-human-resources-employee-human-resource-management-service-people-thumbnail-removebg-preview.png" />
+               </image>
+            </ImageView>
+
+            <Pane layoutX="10.0" layoutY="93.0" prefHeight="477.0" prefWidth="351.0" styleClass="left-form" stylesheets="@design.css">
+               <children>
+                  <TextField fx:id="txtName" layoutX="86.0" layoutY="72.0" prefHeight="37.0" prefWidth="215.0" promptText="Name ">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="84.0" layoutY="28.0" prefHeight="30.0" prefWidth="155.0" styleClass="label-info" stylesheets="@design.css" text="Nom &amp; Prenom " textFill="#eeeaea">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtSalaire" layoutX="86.0" layoutY="157.0" prefHeight="37.0" prefWidth="215.0" promptText="Salaire">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="84.0" layoutY="119.0" styleClass="label-info" stylesheets="@design.css" text="Salaire  " textFill="#eeeaea">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtAge" layoutX="84.0" layoutY="241.0" prefHeight="37.0" prefWidth="215.0" promptText="Age">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="84.0" layoutY="205.0" styleClass="label-info" stylesheets="@design.css" text="Age   " textFill="#eeeaea">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtDepart" layoutX="84.0" layoutY="325.0" prefHeight="37.0" prefWidth="215.0" promptText="ID_Departement ">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="84.0" layoutY="288.0" prefHeight="30.0" prefWidth="155.0" styleClass="label-info" stylesheets="@design.css" text="ID_Departement" textFill="#eeeaea">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnAdd" layoutX="14.0" layoutY="388.0" mnemonicParsing="false" onAction="#Add" prefHeight="37.0" prefWidth="70.0" styleClass="add-btn" stylesheets="@design.css" text="Add" />
+                  <Button fx:id="btnUpdate" layoutX="98.0" layoutY="388.0" mnemonicParsing="false" onAction="#Update" prefHeight="37.0" prefWidth="70.0" styleClass="update-btn" stylesheets="@design.css" text="Update" />
+                  <Button fx:id="btnDelete" layoutX="260.0" layoutY="388.0" mnemonicParsing="false" onAction="#Delete" prefHeight="37.0" prefWidth="70.0" styleClass="delete-btn" stylesheets="@design.css" text="Delete" />
+
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table" layoutX="391.0" layoutY="90.0" prefHeight="477.0" prefWidth="612.0" styleClass="table-column" stylesheets="@design.css">
+        <columns>
+          <TableColumn fx:id="IdColomn" prefWidth="113.0" text="ID" />
+          <TableColumn fx:id="NameColomn" prefWidth="126.0" text="Employe Name" />
+            <TableColumn fx:id="SalaireColomn" prefWidth="114.0" text="Salaire" />
+            <TableColumn fx:id="AgeColomn" minWidth="0.0" prefWidth="130.0" text="Age" />
+            <TableColumn fx:id="DepartementColomn" prefWidth="125.0" text="Departement" />
+        </columns>
+         
+      </TableView>
+      <TextField fx:id="txtSearch" layoutX="395.0" layoutY="52.0" prefHeight="30.0" prefWidth="191.0" promptText="Search By Departement" styleClass="search" stylesheets="@design.css">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnSearch" layoutX="592.0" layoutY="52.0" mnemonicParsing="false" onAction="#Search" prefHeight="30.0" prefWidth="70.0" styleClass="add-btn" stylesheets="@design.css" text="Search" />
+      <Label fx:id="lblTotalEmployees" layoutX="1041.0" layoutY="360.0" prefHeight="37.0" prefWidth="278.0" styleClass="search" stylesheets="@design.css" />
+      <Label fx:id="lblLargestDepartment" layoutX="1041.0" layoutY="300.0" prefHeight="37.0" prefWidth="278.0" styleClass="search" stylesheets="@design.css" />
+      <TableView fx:id="departmentEmployeeTable" layoutX="1041.0" layoutY="141.0" prefHeight="138.0" prefWidth="278.0" stylesheets="@design.css">
+         <columns>
+            <TableColumn fx:id="departmentColumn" prefWidth="138.0" text="Departement" />
+            <TableColumn fx:id="employeeCountColumn" prefWidth="139.0" text="Employee Count" />
+         </columns>
+      </TableView>
+
+      <Button fx:id="btnSearch1" layoutX="1040.0" layoutY="90.0" mnemonicParsing="false" onAction="#Search" prefHeight="30.0" prefWidth="278.0" styleClass="add-btn" stylesheets="@design.css" text="Statistics" />
+      <Label fx:id="lblTotalSalary" layoutX="1041.0" layoutY="414.0" prefHeight="37.0" prefWidth="278.0" styleClass="search" stylesheets="@design.css" />
+
+   </children>
+</AnchorPane>
