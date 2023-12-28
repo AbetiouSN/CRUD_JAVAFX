@@ -100,8 +100,6 @@ public class HelloController implements Initializable{
             pst.setInt(4,RefDept);
             pst.executeUpdate();
 
-
-
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Test Connection !!");
 
@@ -418,4 +416,3 @@ void table() {
 
     }
 }
-
