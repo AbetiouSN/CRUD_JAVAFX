@@ -18,10 +18,17 @@ public class Employee {
     private StringProperty  age;
     private StringProperty  refDept;
 
-    // Constructeur
+
 
 
     public Employee(StringProperty idEmp, StringProperty nomEmp, StringProperty salaire, StringProperty age, StringProperty refDept) {
+        this.idEmp = idEmp;
+        this.nomEmp = nomEmp;
+        this.salaire = salaire;
+        this.age = age;
+        this.refDept = refDept;
+    }
+    public Employee(StringProperty nomEmp, StringProperty salaire, StringProperty age, StringProperty refDept) {
         this.idEmp = idEmp;
         this.nomEmp = nomEmp;
         this.salaire = salaire;
@@ -36,9 +43,6 @@ public class Employee {
         age = new SimpleStringProperty(this,"age");
         refDept = new SimpleStringProperty(this,"refDept");
     }
-
-
-    // Getters et Setters
 
     public StringProperty idProperty(){return idEmp;}
     public StringProperty nameProperty(){return nomEmp;}
@@ -58,9 +62,6 @@ public class Employee {
         this.idEmp.set(idEmp);
     }
 
-    public String getNomEmp() {
-        return nomEmp.get();
-    }
 
     public StringProperty nomEmpProperty() {
         return nomEmp;
@@ -73,6 +74,10 @@ public class Employee {
     public String getSalaire() {
         return salaire.get();
     }
+    public String getNomEmp() {
+        return nomEmp.get();
+    }
+
 
     public void setSalaire(String salaire) {
         this.salaire.set(salaire);

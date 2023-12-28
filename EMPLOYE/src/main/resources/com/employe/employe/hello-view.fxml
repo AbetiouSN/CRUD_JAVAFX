@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -86,12 +87,13 @@
         </columns>
          
       </TableView>
-      <TextField fx:id="txtSearch" layoutX="395.0" layoutY="52.0" prefHeight="30.0" prefWidth="191.0" promptText="Search By Departement" styleClass="search" stylesheets="@design.css">
+      <TextField fx:id="txtSearch" layoutX="395.0" layoutY="52.0" onKeyPressed="#Search" prefHeight="30.0" prefWidth="191.0" promptText="Search By Departement" styleClass="search" stylesheets="@design.css">
          <font>
             <Font size="13.0" />
          </font>
       </TextField>
       <Button fx:id="btnSearch" layoutX="592.0" layoutY="52.0" mnemonicParsing="false" onAction="#Search" prefHeight="30.0" prefWidth="70.0" styleClass="add-btn" stylesheets="@design.css" text="Search" />
+
       <Label fx:id="lblTotalEmployees" layoutX="1041.0" layoutY="360.0" prefHeight="37.0" prefWidth="278.0" styleClass="search" stylesheets="@design.css" />
       <Label fx:id="lblLargestDepartment" layoutX="1041.0" layoutY="300.0" prefHeight="37.0" prefWidth="278.0" styleClass="search" stylesheets="@design.css" />
       <TableView fx:id="departmentEmployeeTable" layoutX="1041.0" layoutY="141.0" prefHeight="138.0" prefWidth="278.0" stylesheets="@design.css">
@@ -103,6 +105,8 @@
 
       <Button fx:id="btnSearch1" layoutX="1040.0" layoutY="90.0" mnemonicParsing="false" onAction="#Search" prefHeight="30.0" prefWidth="278.0" styleClass="add-btn" stylesheets="@design.css" text="Statistics" />
       <Label fx:id="lblTotalSalary" layoutX="1041.0" layoutY="414.0" prefHeight="37.0" prefWidth="278.0" styleClass="search" stylesheets="@design.css" />
+      <ChoiceBox fx:id="dropItems" layoutX="853.0" layoutY="53.0" prefWidth="150.0" styleClass="label-info" stylesheets="@design.css" />
+      <Label layoutX="723.0" layoutY="57.0" styleClass="label-info" stylesheets="@design.css" text="Type de recherche" />
 
    </children>
 </AnchorPane>
